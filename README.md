@@ -14,3 +14,17 @@ localhost:8080/api
 
 # ou rodar o comando no terminal:
 while true; do curl localhost:8080/api ; echo '' ; sleep 1; done
+
+
+
+# PARA SUBIR O KEYCLOAK NO KUBERNETES ENTRAR NA PASTA 'kubernetes/keycloack'
+# Executar os seguintes comandos:
+
+kubectl apply -f postgres.yaml 
+
+kubectl apply -f postgres-port.yaml 
+
+kubectl apply -f keycloack.yaml 
+
+# Após isso deve ser possível acessar o painel de administração do keycloak pelo endereço
+http://localhost:8082
